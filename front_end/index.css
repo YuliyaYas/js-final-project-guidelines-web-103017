@@ -2,7 +2,18 @@ body {
   background-color: #fff3c9;
 }
 
+header {
+  background-color: #05a89a;
+  height: 90px;
+  font-size: 70px;
+  width: 100%;
+}
+
 .wrapper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: grid;
   grid-template-areas: 'header header header';
   grid-template-columns:  auto auto auto;
@@ -34,12 +45,4 @@ grid-template-columns: auto auto;
 
 .right-side{
   grid-column: 3;
-}
-
-
-header {
-    background-color: #05a89a;
-    height: 90px;
-    font-size: 70px;
-    width: 100%;
 }
