@@ -16,7 +16,7 @@ header {
   width: 100%;
   display: grid;
   grid-template-areas: 'header header header';
-  grid-template-columns:  33% auto auto;
+  grid-template-columns:  33% 33% 33%;
   grid-gap: 50px;
 }
 
@@ -32,7 +32,7 @@ div.gallery {
     margin: 5px;
     border: 1px solid #ccc;
     float: left;
-    width: 48%;
+    width: 40%;
     /* background-color: #ffffff; */
     border-radius: 5px;
     text-align: center;
@@ -43,7 +43,7 @@ div.gallery:hover {
 }
 div.gallery img {
     width: 100%;
-    height: auto;
+    height: 91.2px;
     /* padding: 5px; */
     background-color: #ffffff;
     border-radius: 5px

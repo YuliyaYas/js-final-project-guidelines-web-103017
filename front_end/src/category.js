@@ -7,13 +7,13 @@ class Category {
   }
 
   renderCategory() {
-    return `<button class="accordion">${this.name}</button>
-              <div id="${this.id}"class="panel"></div>`
-  }
+   return `<button class="accordion">${this.name}</button>
+             <div class="panel"><ul id="${this.id}"></ul></div>`
+ }
 
-  static renderCatThings(thing) {
-    return `<p>${thing.name}</p>`
-  }
+ static renderCatThings(thing) {
+ return `<li><input type="checkbox"/>${thing.name}</li>`
+}
 
   renderAccordionToggle() {
     var acc = document.getElementsByClassName("accordion");
