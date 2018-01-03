@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   Adapter.getAndSetActivities();
+
   Adapter.getCategories();
-  Adapter.getThings();
+  // Adapter.getThings();
+  EventListener.activityListener()
+
 })

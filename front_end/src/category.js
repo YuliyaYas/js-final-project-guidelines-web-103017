@@ -8,7 +8,7 @@ class Category {
 
   renderCategory() {
    return `<button class="accordion">${this.name}</button>
-             <div class="panel"><ul id="${this.id}"></ul></div>`
+             <div class="panel"><ul id="${this.id}" class="thing-list"></ul></div>`
  }
 
  static renderCatThings(thing) {

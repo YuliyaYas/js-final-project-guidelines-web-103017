@@ -17,7 +17,7 @@ header {
   display: grid;
   grid-template-areas: 'header header header';
   grid-template-columns:  33% 33% 33%;
-  grid-gap: 50px;
+  grid-gap: 10px;
 }
 
 .header {
@@ -32,7 +32,7 @@ div.gallery {
     margin: 5px;
     border: 1px solid #ccc;
     float: left;
-    width: 40%;
+    width: 46%;
     /* background-color: #ffffff; */
     border-radius: 5px;
     text-align: center;
@@ -87,4 +87,8 @@ div.desc {
 
 .right-side{
   grid-column: 3;
+}
+
+.thing-list li {
+  list-style: none;
 }
