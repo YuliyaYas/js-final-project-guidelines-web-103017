@@ -15,8 +15,7 @@ class Category {
     return `<p>${thing.name}</p>`
   }
 
-  static renderAccordionToggle() {
-    return `<script>
+  renderAccordionToggle() {
     var acc = document.getElementsByClassName("accordion");
     var i;
 
@@ -31,7 +30,6 @@ class Category {
             }
         });
     }
-    </script>`
   }
 
 }

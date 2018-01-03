@@ -22,7 +22,6 @@ class Adapter {
         parentDiv.innerHTML += Category.renderCatThings(thing);
       })
     })
-    Category.renderAccordionToggle();
   }
 
   static getCategories() {
@@ -33,9 +32,7 @@ class Adapter {
         const category = new Category(cat);
         const middle = document.querySelector('.middle');
         middle.innerHTML += category.renderCategory();
-        // category.things.forEach(thing => {
-        //   thing.renderCatThings();
-        // })
+        category.renderAccordionToggle();
       })
     })
   }
