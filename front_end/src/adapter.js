@@ -22,6 +22,7 @@ class Adapter {
         parentDiv.innerHTML += Category.renderCatThings(thing);
       })
     })
+    Category.renderAccordionToggle();
   }
 
   static getCategories() {
