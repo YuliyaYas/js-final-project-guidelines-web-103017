@@ -7,12 +7,12 @@ class Category {
   }
 
   renderCategory() {
-    return `<button id="${this.id}" class="accordian">${this.name}</button>
-              <div class="category-panel"></div>`
+    return `<button class="accordion">${this.name}</button>
+              <div id="${this.id}"class="category-panel"></div>`
   }
 
-  renderCatThings() {
-    return `<p>${this.name}</p>`
+  static renderCatThings(thing) {
+    return `<p>${thing.name}</p>`
   }
 
 }

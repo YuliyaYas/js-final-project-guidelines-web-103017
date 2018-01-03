@@ -18,8 +18,8 @@ class Adapter {
     .then(json => {
       json.forEach(thingObj => {
         const thing = new Thing(thingObj);
-        const parentButton = document.querySelector(`button#${thing.categoryId} div`);
-        parentButton.innerHTML += thing.renderCatThings();
+        const parentDiv = document.getElementById(`${thing.categoryId}`);
+        parentDiv.innerHTML += Category.renderCatThings(thing);
       })
     })
   }
