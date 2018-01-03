@@ -9,8 +9,8 @@ class Adapter {
         const left = document.querySelector('.left-side');
         left.innerHTML += act.renderActivity();
       })
+      EventListener.activityListener()
     })
-    // EventListener.activityListener()
   }
 
   static getThings() {
@@ -19,8 +19,8 @@ class Adapter {
     .then(json => {
       json.forEach(thingObj => {
         const thing = new Thing(thingObj);
-        const parentDiv = document.getElementById(`${thing.categoryId}`);
-        parentDiv.innerHTML += Category.renderCatThings(thing);
+        // const parentDiv = document.getElementById(`${thing.categoryId}`);
+        // parentDiv.innerHTML += Category.renderCatThings(thing);
       })
     })
   }
@@ -28,14 +28,14 @@ class Adapter {
   static getCategories() {
     return fetch('http://localhost:3000/api/v1/categories')
     .then(resp => resp.json())
-    // .then(json => {
-    //   json.forEach(cat => {
-    //     const category = new Category(cat);
-    //     const middle = document.querySelector('.middle');
-    //     middle.innerHTML += category.renderCategory();
-    //     category.renderAccordionToggle();
-    //   })
-    // })
+    .then(json => {
+      json.forEach(cat => {
+        const category = new Category(cat);
+        const middle = document.querySelector('.middle');
+        middle.innerHTML += category.renderCategory();
+        category.renderAccordionToggle();
+      })
+    })
   }
 
 }
