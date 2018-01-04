@@ -18,10 +18,14 @@ class EventListener {
         activity.things.forEach(thing => {
           let frontThing = Thing.all.find(x => thing.id === x.id)
           const parentDiv = document.getElementById(`${frontThing.categoryId}`);
-          parentDiv.innerHTML += Category.renderCatThings(frontThing)
+          const lis = document.querySelectorAll('li');
+          const lisArray = [...lis];
+          if (!lisArray.find(x => x.innerText === frontThing.name)) {
+              parentDiv.innerHTML += Category.renderCatThings(frontThing)          }
           // parentDiv.innerHTML += Thing.renderThingForm();
         })
         Category.renderSaveForm();
+        EventListener.addTripEventListener()
       })
     }
   };
@@ -70,10 +74,39 @@ class EventListener {
           let frontThing = Thing.all.find(x => thing.id === x.id)
           const parentDiv = document.getElementById(`${frontThing.categoryId}`);
           parentDiv.innerHTML += Category.renderCatThings(frontThing)
+
           // parentDiv.innerHTML += Thing.renderThingForm();
         })
+        EventListener.deleteTripListener();
       }
     })
+  }
+
+  static addTripEventListener(){
+    const form = document.querySelector('.add-trip');
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const location = document.getElementById('trip-location').value;
+      const startDate = document.getElementById('start-date').value;
+      const endDate = document.getElementById('end-date').value;
+      const activityName = document.querySelector('#list h4').innerHTML;
+      const activityId = Activity.all.find(x => x.name === activityName).id;
+      const userId = User.all[0].id;
+      Adapter.addTrip(location, startDate, endDate, activityId, userId);
+
+    })
+  }
+
+  static deleteTripListener(){
+    const right = document.querySelector('.right-side');
+    right.addEventListener('click', e => {
+      debugger
+      if (e.target.className === "delete-button") {
+
+        deleteTrip(e.target)
+      }
+    })
+
   }
 
 }

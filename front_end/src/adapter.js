@@ -1,7 +1,7 @@
 class Adapter {
 
   static getAndSetActivities() {
-    return fetch('http://localhost:3000/api/v1/activities')
+     fetch('http://localhost:3000/api/v1/activities')
     .then(resp => resp.json())
     .then(json => {
       json.forEach(activity => {
@@ -14,7 +14,7 @@ class Adapter {
   }
 
   static getThings() {
-    return fetch('http://localhost:3000/api/v1/things')
+     fetch('http://localhost:3000/api/v1/things')
     .then(resp => resp.json())
     .then(json => {
       json.forEach(thingObj => {
@@ -26,7 +26,7 @@ class Adapter {
   }
 
   static getCategories() {
-    return fetch('http://localhost:3000/api/v1/categories')
+     fetch('http://localhost:3000/api/v1/categories')
     .then(resp => resp.json())
     .then(json => {
       json.forEach(cat => {
@@ -41,7 +41,7 @@ class Adapter {
   }
 
   static createThing(thing, catId, activityId) {
-    return fetch('http://localhost:3000/api/v1/things', {
+     fetch('http://localhost:3000/api/v1/things', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -56,13 +56,17 @@ class Adapter {
       const thingy = new Thing(json);
       const catFinder = Category.all.find(x => x.id === thingy.categoryId);
       const target = document.getElementById(`${catFinder.id}`);
-      target.innerHTML += Category.renderCatThings(thingy);
+      const lis = document.querySelectorAll('li');
+      const lisArray = [...lis];
+      if (!lisArray.find(x => x.innerText === thingy.name)) {
+        target.innerHTML += Category.renderCatThings(thingy);
+      }
       Adapter.updateActivities(activityId, thingy.id)
     })
   }
 
   static updateActivities(activityId, thingId) {
-    return fetch(`http://localhost:3000/api/v1/activities/${activityId}`, {
+     fetch(`http://localhost:3000/api/v1/activities/${activityId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -79,7 +83,7 @@ class Adapter {
   }
 
   static getUsers() {
-    return fetch('http://localhost:3000/api/v1/users')
+     fetch('http://localhost:3000/api/v1/users')
     .then(resp => resp.json())
     .then(json => {
       json.forEach(obj => {
@@ -93,13 +97,51 @@ class Adapter {
   }
 
   static getTrips() {
-    return fetch('http://localhost:3000/api/v1/trips')
+     fetch('http://localhost:3000/api/v1/trips')
     .then(resp => resp.json())
     .then(json => {
       json.forEach(obj => {
         const trip = new Trip(obj);
       })
     })
+  }
+
+  static addTrip(location, start_date, end_date, activity_id, user_id){
+     fetch('http://localhost:3000/api/v1/trips', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        location: `${location}`,
+        start_date: `${start_date}`,
+        end_date: `${end_date}`,
+        activity_id: `${activity_id}`,
+        user_id: `${user_id}`
+      })
+    }).then(resp => resp.json())
+    .then(json => {
+      const trip =new Trip(json);
+      console.log(trip);
+      trip.renderUserTrip();
+
+
+    })
+  }
+
+  static deleteTrip(id) {
+    const element = document.getElementById(`${id}`);
+    element.remove();
+    Trip.all.filter(x => x.id !==id);
+    fetch(`http://localhost:3000/api/v1/trips/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      }
+    })
+
   }
 
 }

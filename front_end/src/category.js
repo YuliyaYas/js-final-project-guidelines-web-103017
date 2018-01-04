@@ -38,7 +38,7 @@ class Category {
     formDiv.innerHTML = `
             <p>Add a New Trip</p>
 
-            <form class="" action="index.html" method="post">
+            <form class="add-trip" action="index.html" method="post">
                 <input id="trip-location" type="text" placeholder="Enter Destination" value=""><br>
                 <label>Enter Start Date:</label>
                 <input id="start-date" type="date"><br>
