@@ -9,7 +9,7 @@ class EventListener {
         Category.all.forEach(cat => {
           let ul = document.getElementById(`${cat.id}`)
           ul.innerHTML = Thing.renderThingForm(cat.id);
-          Category.thingFormListener();
+          // Category.thingFormListener();
         })
         let name = e.target.id;
         let activity = Activity.all.find(x => x.name === name)
@@ -25,16 +25,29 @@ class EventListener {
     }
   };
 
-  static thingFormListener() {
-    const thingForms = document.getElementsByClassName('add-thing');
-    console.log(thingForms)
-    for (var i = 0; i < thingForms.length; i++) {
-      debugger
-      thingForms[i].addEventListener("click", e => {
-        console.log(e.target)
-      })
-    }
+  // static thingFormListener() {
+  //   const thingForms = document.getElementsByClassName('add-thing');
+  //   console.log(thingForms)
+  //   for (var i = 0; i < thingForms.length; i++) {
+  //     debugger
+  //     thingForms[i].addEventListener("click", e => {
+  //       console.log(e.target)
+  //     })
+  //   }
+  //
+  // }
 
+  static formListenerTake2() {
+    const middle = document.getElementById('middle');
+    middle.addEventListener('click', e => {
+      if (e.target.className === "add-thing") {
+        const newThing = document.querySelector(`[data-id="${e.target.id}"]`).value;
+        const catId = e.target.id;
+        const activityName = document.querySelector('#list h4').innerText;
+        const activityId = Activity.all.find(x => x.name === activityName).id;
+        Adapter.createThing(newThing, catId, activityId);
+      }
+    })
   }
 
 }

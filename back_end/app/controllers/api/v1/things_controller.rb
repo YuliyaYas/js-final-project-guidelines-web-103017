@@ -8,6 +8,7 @@ class Api::V1::ThingsController < ApplicationController
 
   def create
     thing = Thing.create(thing_params)
+    thing.activities << Activity.find(params[:activity_id])
     render json: thing, status: 201
   end
 

@@ -3,4 +3,5 @@ document.addEventListener("DOMContentLoaded", () => {
   Adapter.getCategories();
   Adapter.getThings();
   EventListener.activityListener();
+  EventListener.formListenerTake2();
 })

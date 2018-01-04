@@ -9,7 +9,7 @@ class Thing {
 
   static renderThingForm(id) {
     return ` <div class="${id}">
-                  <input class="input" name="prof1" type="text" placeholder="Add Item"/>
+                  <input data-id="${id}" class="input" name="prof1" type="text" placeholder="Add Item"/>
                   <button id="${id}" class="add-thing" type="button">+</button>
             </div>`
   }
