@@ -6,4 +6,5 @@ document.addEventListener("DOMContentLoaded", () => {
   Adapter.getThings();
   EventListener.activityListener();
   EventListener.formListenerTake2();
+  EventListener.deleteTripListener();
 })

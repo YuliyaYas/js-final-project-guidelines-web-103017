@@ -13,7 +13,7 @@ class Trip {
     area.innerHTML += `<div style="background-color: white;" class="trippin" id="${this.id}">${this.location}<br>
                             <p>Start Date: ${this.start_date}<br>
                             End Date: ${this.end_date}</p>
-                            <button type="button" class="delete-button" data-id="${this.id}"> X </button>
+                            <button type="button" class="delete-button" id="${this.id}"> X </button>
 
                       </div><br>`
 

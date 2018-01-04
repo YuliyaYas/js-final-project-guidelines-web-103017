@@ -15,7 +15,7 @@ class User {
       area.innerHTML += `<div style="background-color: white;" class="trippin" id="${trip.id}">${trip.location}<br>
                               <p>Start Date: ${trip.start_date}<br>
                               End Date: ${trip.end_date}</p>
-                              <button type="button" class="delete-button" data-id="${trip.id}"> X </button>
+                              <button type="button" class="delete-button" id="${trip.id}"> X </button>
 
                         </div><br>`
     })

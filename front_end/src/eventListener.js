@@ -77,7 +77,7 @@ class EventListener {
 
           // parentDiv.innerHTML += Thing.renderThingForm();
         })
-        EventListener.deleteTripListener();
+        // EventListener.deleteTripListener();
       }
     })
   }
@@ -98,15 +98,12 @@ class EventListener {
   }
 
   static deleteTripListener(){
-    const right = document.querySelector('.right-side');
-    right.addEventListener('click', e => {
-      debugger
+    document.addEventListener('click', e => {
       if (e.target.className === "delete-button") {
-
-        deleteTrip(e.target)
+        const id = parseInt(e.target.id);
+        Adapter.deleteTrip(id);
       }
     })
-
   }
 
 }
