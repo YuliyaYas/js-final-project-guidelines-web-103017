@@ -9,6 +9,7 @@ header {
   width: 100%;
 }
 
+
 .wrapper{
   position: absolute;
   top: 0;
@@ -22,6 +23,8 @@ header {
 
 .header {
   grid-area: header;
+  /*position: fixed;*/
+  /*width: 100%;*/
 }
 
 .left-side {
@@ -77,6 +80,18 @@ div.desc {
 
 .active, .accordion:hover {
     background-color: #ccc;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
 }
 
 .panel {
