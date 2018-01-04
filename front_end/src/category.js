@@ -15,6 +15,7 @@ class Category {
  return `<li><input type="checkbox"/>${thing.name}</li>`
 }
 
+
   renderAccordionToggle() {
     var acc = document.getElementsByClassName("accordion");
     var i;
