@@ -44,5 +44,5 @@ skiing = Activity.create(name: "Skiing", things: [phone, charger, socks, snacks,
 surfing = Activity.create(name: "Surfing", things: [phone, charger, socks, snacks, swimsuit, surf_board])
 tennis = Activity.create(name: "Tennis", things: [tennis_racket, phone, charger, socks, snacks, undergarments])
 
-ski_trip = Trip.create(user: jake, activity: skiing, start_date: "2018-02-16", end_date: "2018-02-24")
-hiking_trip = Trip.create(user: jake, activity: hiking, start_date: "2018-03-15", end_date: "2018-03-16")
+ski_trip = Trip.create(user: jake, activity: skiing, start_date: "2018-02-16", end_date: "2018-02-24", location: "Jackson Hole")
+hiking_trip = Trip.create(user: jake, activity: hiking, start_date: "2018-03-15", end_date: "2018-03-16", location: "Crested Butte")

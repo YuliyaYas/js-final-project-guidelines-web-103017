@@ -12,7 +12,7 @@ class Api::V1::ActivitiesController < ApplicationController
   end
 
   def update
-    @activity.update(activity_params)
+    @activity.things << Thing.all.find(params[:thing_id])
     render json: @activity, status: 200
   end
 

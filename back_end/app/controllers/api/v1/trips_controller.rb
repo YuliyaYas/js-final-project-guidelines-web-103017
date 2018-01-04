@@ -28,7 +28,7 @@ class Api::V1::TripsController < ApplicationController
 
   private
   def trip_params
-    params.permit(:start_date, :end_date, :user_id, :activity_id)
+    params.permit(:start_date, :end_date, :user_id, :activity_id, :location)
   end
 
   def set_trip

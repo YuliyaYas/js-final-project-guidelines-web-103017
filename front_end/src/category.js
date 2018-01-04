@@ -32,6 +32,21 @@ class Category {
         });
     }
   }
+
+  static renderSaveForm() {
+    return `
+            <p>Add a New Trip</p>
+
+            <form class="" action="index.html" method="post">
+                <input id="trip-location" type="text" placeholder="Enter Destination" value=""><br>
+                <label>Enter Start Date:</label>
+                <input id="start-date" type="date"><br>
+                <label>Enter End Date:</label>
+                <input id="end-date" type="date"><br>
+                <input type="submit" value="Add Trip">
+            </form>`
+  }
+
 }
 
 Category.all = [];
