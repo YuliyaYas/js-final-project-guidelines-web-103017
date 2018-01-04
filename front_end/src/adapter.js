@@ -36,7 +36,7 @@ class Adapter {
         category.renderAccordionToggle();
       })
       const middie = document.querySelector('.middle');
-      middle.innerHTML += Category.renderSaveForm();
+      // middle.innerHTML += Category.renderThingForm();
     })
   }
 
@@ -88,6 +88,7 @@ class Adapter {
         right.innerHTML = `<h4>Welcome, ${user.name}</h4>`
       })
       User.renderTrips()
+      EventListener.rightSideListener()
     })
   }
 

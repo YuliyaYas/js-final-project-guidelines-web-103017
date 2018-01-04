@@ -50,4 +50,15 @@ class EventListener {
     })
   }
 
+  static rightSideListener() {
+    const right = document.getElementById('right-side');
+    right.addEventListener('click', e => {
+      if (e.target.className === "trippin") {
+        const trip = User.all[0].trips.find(x => x.id === parseInt(e.target.id));
+        
+        debugger
+      }
+    })
+  }
+
 }

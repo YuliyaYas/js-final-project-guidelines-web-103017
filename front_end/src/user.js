@@ -12,7 +12,10 @@ class User {
     const user = User.all[0];
     user.trips.forEach(trip => {
       const area = document.querySelector('.trip-list');
-      area.innerHTML += `<div id="${trip.id}">${trip.location}</div>`
+      area.innerHTML += `<div style="background-color: white;" class="trippin" id="${trip.id}">${trip.location}<br>
+                              <p>Start Date: ${trip.start_date}<br>
+                              End Date: ${trip.end_date}</p>
+                        </div><br>`
     })
   }
 
