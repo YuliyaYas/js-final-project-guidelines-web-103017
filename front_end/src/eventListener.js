@@ -21,6 +21,7 @@ class EventListener {
           parentDiv.innerHTML += Category.renderCatThings(frontThing)
           // parentDiv.innerHTML += Thing.renderThingForm();
         })
+        Category.renderSaveForm();
       })
     }
   };
@@ -54,9 +55,23 @@ class EventListener {
     const right = document.getElementById('right-side');
     right.addEventListener('click', e => {
       if (e.target.className === "trippin") {
+        const formDiv = document.querySelector('.form');
+        formDiv.innerHTML= ""
         const trip = User.all[0].trips.find(x => x.id === parseInt(e.target.id));
-        
-        debugger
+        const activityId = Trip.all.find(y => y.id === trip.id).activityId;
+        const actualActivity = Activity.all.find(z => z.id === activityId);
+        Category.all.forEach(cat => {
+          let ul = document.getElementById(`${cat.id}`)
+          ul.innerHTML = Thing.renderThingForm(cat.id);
+        })
+        let titleMiddle = document.getElementById('list')
+        titleMiddle.innerHTML = `<h4>${trip.location} - ${actualActivity.name}</h4>`
+        actualActivity.things.forEach(thing => {
+          let frontThing = Thing.all.find(x => thing.id === x.id)
+          const parentDiv = document.getElementById(`${frontThing.categoryId}`);
+          parentDiv.innerHTML += Category.renderCatThings(frontThing)
+          // parentDiv.innerHTML += Thing.renderThingForm();
+        })
       }
     })
   }

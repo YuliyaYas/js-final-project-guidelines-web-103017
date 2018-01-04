@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   Adapter.getUsers();
+  Adapter.getTrips();
   Adapter.getAndSetActivities();
   Adapter.getCategories();
   Adapter.getThings();

@@ -4,9 +4,11 @@ class Trip {
     this.startDate = json.start_date;
     this.endDate = json.end_date;
     this.userId = json.user.id;
+    this.id = json.id;
     this.activityId = json.activity.id;
     Trip.all.push(this);
   }
+
 
 }
 

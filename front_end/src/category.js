@@ -34,7 +34,8 @@ class Category {
   }
 
   static renderSaveForm() {
-    return `
+    const formDiv = document.querySelector('.form');
+    formDiv.innerHTML = `
             <p>Add a New Trip</p>
 
             <form class="" action="index.html" method="post">
