@@ -13,6 +13,7 @@ electronics = Category.create(name: "Electronics")
 food = Category.create(name: "Food")
 gear = Category.create(name: "Gear")
 toiletries = Category.create(name: "Toiletries")
+misc = Category.create(name: "Miscellaneous")
 
 charger = Thing.create(name: "Charger", category: electronics)
 phone = Thing.create(name: "Phone", category: electronics)

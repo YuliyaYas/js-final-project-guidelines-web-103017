@@ -9,11 +9,11 @@ class Category {
   renderCategory() {
    return `<button class="accordion">${this.name}</button>
              <div class="panel"><ul id="${this.id}" class="thing-list"></ul></div>`
- }
+  }
 
- static renderCatThings(thing) {
- return `<li><input type="checkbox"/>${thing.name}</li>`
-}
+  static renderCatThings(thing) {
+    return `<li><input type="checkbox"/>${thing.name}</li>`
+  }
 
 
   renderAccordionToggle() {
@@ -32,7 +32,6 @@ class Category {
         });
     }
   }
-
 }
 
 Category.all = [];

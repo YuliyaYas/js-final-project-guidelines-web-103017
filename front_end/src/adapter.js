@@ -38,4 +38,25 @@ class Adapter {
     })
   }
 
+  static createThing(thing, category) {
+    return fetch('http://localhost:3000/api/v1/things', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        name: `${thing.name}`,
+        category_id: `${thing.category.id}`
+      })
+    }).then(resp => resp.json()).then(json => {
+      json.forEach(thing => {
+        const thingy = new Thing(thing);
+        const catFinder = Category.all.find(x => x.id === thingy.categoryId);
+        const target = document.findElementById(`${catFinder.id}`);
+        target.innerHTML += Category.renderCatThings(thingy);
+      })
+    })
+  }
+
 }
