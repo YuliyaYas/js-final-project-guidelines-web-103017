@@ -15,7 +15,7 @@ class Trip {
                             End Date: ${this.end_date}</p>
                             <button type="button" class="delete-button" id="${this.id}"> X </button>
 
-                      </div><br>`
+                      </div><br></br>`
 
   }
 

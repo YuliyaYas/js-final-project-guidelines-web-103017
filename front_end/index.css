@@ -13,19 +13,22 @@ h4 {
   text-align: center;
 }
 
-input{
+input#trip-location, #start-date, #end-date{
   /*background-color: #eee;*/
   color: #444;
-  padding: 18px;
-  width: 93.5%;
+  padding: 8px;
+  width: 96.5%;
   outline: none;
   font-size: 15px;
+  border-radius: 8px;
 }
 
 input[type="submit"] {
     width: 100%;
     margin-top: 12px;
-    font-size: 36pt;
+    font-size: 16pt;
+    background: #05a89a;
+    border-radius: 8px;
 
 }
 
