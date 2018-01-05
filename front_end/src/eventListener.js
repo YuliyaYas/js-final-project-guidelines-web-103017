@@ -102,6 +102,8 @@ class EventListener {
 
       Adapter.addTrip(location, startDate, endDate, activityId, userId);
 
+      // EventListener.rightSideListener()
+
     })
   }
 

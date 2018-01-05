@@ -15,6 +15,16 @@ h3 {
   text-align: center;
 }
 
+button.delete-button {
+  background: #05a89a;
+  border-radius: 5px;
+}
+
+button.add-thing {
+  background: #05a89a;
+  border-radius: 5px;
+}
+
 input#trip-location, #start-date, #end-date{
   /*background-color: #eee;*/
   color: #444;
@@ -98,11 +108,12 @@ div.desc {
     cursor: pointer;
     padding: 18px;
     width: 100%;
-    border: none;
+    border: 1px solid #afc9ed;
     text-align: left;
     outline: none;
     font-size: 15px;
     transition: 0.4s;
+    border-radius: 10px;
 }
 
 .active, .accordion:hover {
@@ -111,7 +122,7 @@ div.desc {
 
 .accordion:after {
     content: '\002B';
-    color: #777;
+    color: #afc9ed;
     font-weight: bold;
     float: right;
     margin-left: 5px;
@@ -125,6 +136,14 @@ div.desc {
     padding: 0 18px;
     display: none;
     background-color: white;
+    border-radius: 10px;
+}
+
+ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    margin: 0px;
+    margin-bottom: 10px;
 }
 
 .right-side{

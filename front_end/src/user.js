@@ -13,8 +13,8 @@ class User {
     user.trips.forEach(trip => {
       const area = document.querySelector('.trip-list');
       area.innerHTML += `<div class="trips-style" id="${trip.id}"><h4>${trip.location}</h4>
-                              <p>Start Date: ${trip.start_date}<br>
-                              End Date: ${trip.end_date}</p>
+                              Start Date: ${trip.start_date}<br>
+                              End Date: ${trip.end_date}<br>
                               <button type="button" class="delete-button" id="${trip.id}"> X </button>
 
                         </div><br>`

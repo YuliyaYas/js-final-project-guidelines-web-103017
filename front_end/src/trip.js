@@ -10,9 +10,9 @@ class Trip {
   }
   renderUserTrip(){
     const area = document.querySelector('.trip-list');
-    area.innerHTML += `<div class="trips-style" id="${this.id}"><h4>${this.location}</h4><br>
-                            <p>Start Date: ${this.start_date}<br>
-                            End Date: ${this.end_date}</p>
+    area.innerHTML += `<div class="trips-style" id="${this.id}"><h4>${this.location}</h4>
+                            Start Date: ${this.startDate}<br>
+                            End Date: ${this.endDate}<br>
                             <button type="button" class="delete-button" id="${this.id}"> X </button>
 
                       </div><br></br>`
