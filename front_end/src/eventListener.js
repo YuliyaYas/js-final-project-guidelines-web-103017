@@ -50,7 +50,7 @@ class EventListener {
         const catId = e.target.id;
         const activityName = document.querySelector('#list h3').innerText;
         const activityId = Activity.all.find(x => x.name === activityName).id;
-      
+
 
         Adapter.createThing(newThing, catId, activityId);
       }
@@ -75,7 +75,12 @@ class EventListener {
         actualActivity.things.forEach(thing => {
           let frontThing = Thing.all.find(x => thing.id === x.id)
           const parentDiv = document.getElementById(`${frontThing.categoryId}`);
-          parentDiv.innerHTML += Category.renderCatThings(frontThing)
+          const lis = document.querySelectorAll('li');
+          const lisArray = [...lis];
+          if (!lisArray.find(x => x.innerText === thing.name)) {
+            parentDiv.innerHTML += Category.renderCatThings(frontThing)
+
+          }
 
           // parentDiv.innerHTML += Thing.renderThingForm();
         })
