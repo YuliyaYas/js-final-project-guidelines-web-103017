@@ -89,7 +89,7 @@ class Adapter {
       json.forEach(obj => {
         const user = new User(obj);
         const right = document.querySelector('#welcome-user');
-        right.innerHTML = `<h4>Welcome, ${user.name}</h4>`
+        right.innerHTML = `<h3>Welcome, ${user.name}!</h3>`
       })
       User.renderTrips()
       EventListener.rightSideListener()

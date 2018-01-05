@@ -1,5 +1,7 @@
 body {
-  background-color: #fff3c9;
+  background-color: #fffbf4;
+  font-family: 'Roboto', sans-serif;
+
 }
 
 header {
@@ -9,7 +11,7 @@ header {
   width: 100%;
 }
 
-h4 {
+h3 {
   text-align: center;
 }
 
@@ -55,7 +57,7 @@ input[type="submit"] {
 }
 
 div.gallery {
-    margin: 5px;
+    margin-left: 13px;
     border: 1px solid #ccc;
     float: left;
     width: 42%;
@@ -89,7 +91,9 @@ div.desc {
 }
 
 .accordion {
-    background-color: #eee;
+    background-color: #fff;
+    border: 2px solid black;
+
     color: #444;
     cursor: pointer;
     padding: 18px;
@@ -102,7 +106,7 @@ div.desc {
 }
 
 .active, .accordion:hover {
-    background-color: #ccc;
+    background-color: #afc9ed;
 }
 
 .accordion:after {
@@ -129,4 +133,12 @@ div.desc {
 
 .thing-list li {
   list-style: none;
+}
+
+.trips-style {
+    background-color: #afc9ed;
+    border-radius: 5px;
+    width: 90%;
+    text-align: center;
+    margin-left: 5%;
 }

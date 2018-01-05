@@ -14,7 +14,7 @@ class EventListener {
         let name = e.target.id;
         let activity = Activity.all.find(x => x.name === name)
         let titleMiddle = document.getElementById('list')
-        titleMiddle.innerHTML = `<h4>${name}</h4>`
+        titleMiddle.innerHTML = `<h3>${name}</h3>`
         activity.things.forEach(thing => {
           let frontThing = Thing.all.find(x => thing.id === x.id)
           const parentDiv = document.getElementById(`${frontThing.categoryId}`);
@@ -48,8 +48,10 @@ class EventListener {
       if (e.target.className === "add-thing") {
         const newThing = document.querySelector(`[data-id="${e.target.id}"]`).value;
         const catId = e.target.id;
-        const activityName = document.querySelector('#list h4').innerText;
+        const activityName = document.querySelector('#list h3').innerText;
         const activityId = Activity.all.find(x => x.name === activityName).id;
+      
+
         Adapter.createThing(newThing, catId, activityId);
       }
     })
@@ -58,7 +60,7 @@ class EventListener {
   static rightSideListener() {
     const right = document.getElementById('right-side');
     right.addEventListener('click', e => {
-      if (e.target.className === "trippin") {
+      if (e.target.className === "trips-style") {
         const formDiv = document.querySelector('.form');
         formDiv.innerHTML= ""
         const trip = User.all[0].trips.find(x => x.id === parseInt(e.target.id));
@@ -69,7 +71,7 @@ class EventListener {
           ul.innerHTML = Thing.renderThingForm(cat.id);
         })
         let titleMiddle = document.getElementById('list')
-        titleMiddle.innerHTML = `<h4>${trip.location} - ${actualActivity.name}</h4>`
+        titleMiddle.innerHTML = `<h3>${trip.location} - ${actualActivity.name}</h3>`
         actualActivity.things.forEach(thing => {
           let frontThing = Thing.all.find(x => thing.id === x.id)
           const parentDiv = document.getElementById(`${frontThing.categoryId}`);
@@ -89,9 +91,10 @@ class EventListener {
       const location = document.getElementById('trip-location').value;
       const startDate = document.getElementById('start-date').value;
       const endDate = document.getElementById('end-date').value;
-      const activityName = document.querySelector('#list h4').innerHTML;
+      const activityName = document.querySelector('#list h3').innerHTML;
       const activityId = Activity.all.find(x => x.name === activityName).id;
       const userId = User.all[0].id;
+
       Adapter.addTrip(location, startDate, endDate, activityId, userId);
 
     })

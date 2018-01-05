@@ -43,8 +43,7 @@ class Category {
                 <label>Enter End Date:</label>
                 <input id="end-date" type="date"><br>
                 <input type="submit" value="ADD TRIP">
-                <br/>
-            </form>`
+            </form><br>`
   }
 
 }
