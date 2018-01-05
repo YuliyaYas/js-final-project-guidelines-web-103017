@@ -36,15 +36,14 @@ class Category {
   static renderSaveForm() {
     const formDiv = document.querySelector('.form');
     formDiv.innerHTML = `
-            <p>Add a New Trip</p>
-
             <form class="add-trip" action="index.html" method="post">
                 <input id="trip-location" type="text" placeholder="Enter Destination" value=""><br>
                 <label>Enter Start Date:</label>
                 <input id="start-date" type="date"><br>
                 <label>Enter End Date:</label>
                 <input id="end-date" type="date"><br>
-                <input type="submit" value="Add Trip">
+                <input type="submit" value="ADD TRIP">
+                <br/>
             </form>`
   }
 
